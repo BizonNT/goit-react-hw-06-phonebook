@@ -1,11 +1,19 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
+
+import { addName } from '../../redux/actions';
+import { getAllNames } from '../../redux/selectors';
 
 import css from './contactform.module.css';
 
-export default function ContactForm({ onSubmit, contacts }) {
+export default function ContactForm() {
+  const contacts = useSelector(getAllNames);
+
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleInput = event => {
     const { name, value } = event.currentTarget;
@@ -38,11 +46,13 @@ export default function ContactForm({ onSubmit, contacts }) {
       return;
     }
 
-    onSubmit({
+    const data = {
       name,
       number,
       id: nameId,
-    });
+    };
+    const action = addName(data);
+    dispatch(action);
 
     reset();
   };

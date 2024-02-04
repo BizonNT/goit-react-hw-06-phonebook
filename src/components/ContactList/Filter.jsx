@@ -1,6 +1,18 @@
-import css from "./contactlist.module.css"
+import { useSelector, useDispatch } from 'react-redux';
 
-const Filter = ({ value, onChange }) => {
+import { getFilter } from '../../redux/selectors';
+import { setFilter } from '../../redux/actions';
+
+import css from './contactlist.module.css';
+
+const Filter = () => {
+  const value = useSelector(getFilter);
+
+  const dispatch = useDispatch();
+  const onChange = event => {
+    const action = setFilter(event.currentTarget.value);
+    return dispatch(action);
+  };
   return (
     <label className={css.filter}>
       Find contacts by name
@@ -14,6 +26,5 @@ const Filter = ({ value, onChange }) => {
     </label>
   );
 };
-
 
 export default Filter;
