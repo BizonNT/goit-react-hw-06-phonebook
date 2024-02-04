@@ -17,7 +17,7 @@ export default function App() {
     <div className={css.container}>
       <h2 className={css.title}>Phonebook</h2>
       <ContactForm />
-      <h2 className={css.title}>Contacts</h2>
+      <h3 className={css.subtitle}>Contacts</h3>
       {length > 0 ? (
         <>
           <Filter />
