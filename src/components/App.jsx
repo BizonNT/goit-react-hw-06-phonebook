@@ -5,7 +5,7 @@ import Filter from './ContactList/Filter';
 import ContactList from './ContactList/ContactList';
 import Notification from './Notification/Notification';
 
-import { getAllNames } from '../redux/selectors';
+import { getAllNames } from '../redux/contacts/contacts-selectors';
 
 import css from './app.module.css';
 

@@ -1,11 +1,11 @@
-import { ADD_NAME, DELETE_NAME, SET_FILTER } from './constants';
+import { ADD_NAME, DELETE_NAME } from './contacts-constants';
 
 export const addName = payload => {
   return {
     type: ADD_NAME,
     payload: {
-      ...payload
-    }
+      ...payload,
+    },
   };
 };
 
@@ -15,11 +15,3 @@ export const deleteName = payload => {
     payload,
   };
 };
-
-export const setFilter = payload => {
-  return {
-    type: SET_FILTER,
-    payload,
-  };
-};
-

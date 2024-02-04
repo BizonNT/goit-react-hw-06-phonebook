@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 
-import { addName } from '../../redux/actions';
-import { getAllNames } from '../../redux/selectors';
+import { addName } from '../../redux/contacts/contacts-actions';
+import { getAllNames } from '../../redux/contacts/contacts-selectors';
 
 import css from './contactform.module.css';
 
