@@ -1,17 +1,11 @@
-import { ADD_NAME, DELETE_NAME } from './contacts-constants';
+import { createAction } from '@reduxjs/toolkit';
 
-export const addName = payload => {
+export const addName = createAction('contacts/addContact', data => {
   return {
-    type: ADD_NAME,
     payload: {
-      ...payload,
+      ...data,
     },
   };
-};
+});
 
-export const deleteName = payload => {
-  return {
-    type: DELETE_NAME,
-    payload,
-  };
-};
+export const deleteName = createAction('contacts/deleteContact');
