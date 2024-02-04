@@ -9,11 +9,11 @@ const ContactList = () => {
   const sortedNames = useSelector(getFilteredContacts);
   const dispatch = useDispatch();
 
-const deleteContact = event => {
-  const contactId = event.currentTarget.closest('li').id;
-  const action = deleteName(contactId);
-  dispatch(action);
-};
+  const deleteContact = event => {
+    const contactId = event.currentTarget.closest('li').id;
+    const action = deleteName(contactId);
+    dispatch(action);
+  };
 
   const elements = sortedNames.map(({ name, number, id }) => (
     <li className={css.item} key={id} id={id}>

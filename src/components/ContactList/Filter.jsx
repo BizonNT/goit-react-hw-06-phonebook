@@ -9,7 +9,7 @@ const Filter = () => {
   const value = useSelector(getFilter);
 
   const dispatch = useDispatch();
-  
+
   const onChange = event => {
     const action = setFilter(event.currentTarget.value);
     return dispatch(action);
